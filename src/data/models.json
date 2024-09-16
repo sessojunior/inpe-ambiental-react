@@ -69,15 +69,6 @@
           ]
         },
         {
-          "label": "Nível de 1400m",
-          "value": "co_1400",
-          "group": "co",
-          "regions": [
-            "ams",
-            "bra"
-          ]
-        },
-        {
           "label": "Nível de 1200m",
           "value": "co_1200",
           "group": "co",
@@ -125,15 +116,6 @@
         {
           "label": "Nível de 3300m",
           "value": "pm25_3300",
-          "group": "pm25",
-          "regions": [
-            "ams",
-            "bra"
-          ]
-        },
-        {
-          "label": "Nível de 1400m",
-          "value": "pm25_1400",
           "group": "pm25",
           "regions": [
             "ams",
