@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Global",
+    "value": "glo"
+  },
+  {
+    "label": "América do Sul",
+    "value": "ams"
+  },
+  {
+    "label": "Brasil",
+    "value": "bra"
+  },
+  {
+    "label": "Sul",
+    "value": "sul"
+  },
+  {
+    "label": "Sudeste",
+    "value": "sud"
+  },
+  {
+    "label": "Centro-Oeste",
+    "value": "coe"
+  },
+  {
+    "label": "Nordeste",
+    "value": "nde"
+  },
+  {
+    "label": "Norte",
+    "value": "nte"
+  },
+  {
+    "label": "Brasil",
+    "value": "bra"
+  }
+]
