@@ -1,11 +1,10 @@
-import Frame from "./Frame"
+import Frame from "./Frame";
 
-import { Suspense, useContext } from 'react'
-import { ConfigContext } from '../contexts/ConfigContext'
+import { Suspense, useContext } from "react";
+import { ConfigContext } from "../contexts/ConfigContext";
 
 export default function Frames() {
-
-  const { config } = useContext(ConfigContext)
+  const { config } = useContext(ConfigContext);
   // console.log("config", config)
 
   // console.log("Frames")
@@ -17,20 +16,20 @@ export default function Frames() {
           <Frame id={1} />
         </div>
       )}
-      {(config.quantityFrames === 2) && (
+      {config.quantityFrames === 2 && (
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <Frame id={1} />
           <Frame id={2} />
         </div>
       )}
-      {(config.quantityFrames === 3) && (
+      {config.quantityFrames === 3 && (
         <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
           <Frame id={1} />
           <Frame id={2} />
           <Frame id={3} />
         </div>
       )}
-      {(config.quantityFrames === 4) && (
+      {config.quantityFrames === 4 && (
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <Suspense fallback={<div>Carregando...</div>}>
             <Frame id={1} />
@@ -47,5 +46,5 @@ export default function Frames() {
         </div>
       )}
     </>
-  )
+  );
 }

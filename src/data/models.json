@@ -9,6 +9,7 @@
     "periodHours": 3,
     "periodStart": "-024",
     "periodEnd": "072",
+    "forecastTime": "000",
     "default": {
       "product": {
         "value": "aod550_40",
