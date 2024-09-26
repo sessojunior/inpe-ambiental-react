@@ -7,7 +7,7 @@
     "urlDates": "https://s1.cptec.inpe.br/grafico/Modelos/portal_previsao_numerica/mod_brams.json",
     "timeRun": 12,
     "periodHours": 3,
-    "periodStart": "000",
+    "periodStart": "-024",
     "periodEnd": "072",
     "default": {
       "product": {
