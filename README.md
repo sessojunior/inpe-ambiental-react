@@ -143,7 +143,8 @@ Exemplo:
     - **label** - _(string ou null: string | null)_. Nome do produto que irá aparecer para o usuário. Exemplos: _"Nível de 250"_, onde o grupo é _"ageop"_. Pode ser _null_ também, se não tiver variações. Por exemplo: _null_, onde o _value_ e o _group_ são do mesmo nome, como _"prec_pnmm"_.
     - **value** - _(string)_. Valor de slug do produto. Exemplos: "prec_pnmm", "aprec", "ageop_500", "ageop_850", "lapserate", "cis_vento_1000", "cis_vento_3000".
     - **group** - _(string)_. Valor de slug do grupo que o produto pertence. Exemplo: "prec", "cis_vento", "lapserate", "ageop".
-    - **regions** - (array de strings: string[]). Os valores possíveis são os que estão nos parâmetros **value** do arquivo JSON **regions.json**. Exemplo: _["ams", "bra", "nte"]_. No caso, aqui são somente os valores de região que este produto possui.
+    - **regions** - (array de strings: string[]). Os valores possíveis são os que estão nos parâmetros **value** do arquivo JSON **regions.json**. Exemplo: _["ams", "bra", "nte"]_. No caso, aqui são somente os valores de região que este produto possui. Pode ser _null_ em caso de não ser seleção por região e sim um campo de texto com seleção por cidade.
+    - **forecastTime** - _(null)_. Opcional, deve ser fornecido como _null_ caso não tenha o forecastTime, como é o caso dos meteogramas.
 
 Exemplo:
 
@@ -180,6 +181,10 @@ Exemplo:
         {
           "label": "Material Particulado (dp<2.5um)",
           "value": "pm25"
+        },
+        {
+          "label": "Meteogramas",
+          "value": "meteograms"
         }
       ],
       "products": [
@@ -272,12 +277,35 @@ Exemplo:
           "value": "pm25_40",
           "group": "pm25",
           "regions": ["ams", "bra"]
+        },
+        {
+          "label": null,
+          "value": "meteograms",
+          "group": "meteograms",
+          "regions": null,
+          "forecastTime": null
         }
       ]
     }
   }
 ]
 ```
+
+## URLs válidas
+
+Exemplos de URLs válidas:
+
+URLs padrão dos modelos:
+
+https://s1.cptec.inpe.br/grafico/Modelos/BRAMS08/pn/aprec/2024/10/08/00/BRAMS08_aprec_ams_2024100800z_000z.png
+
+https://s1.cptec.inpe.br/grafico/Modelos/{{model}}/pn/{{product}}/{{year}}/{{month}}/{{day}}/{{turn}}/{{model}}_{{product}}_{{region}}_{{year}}{{month}}{{day}}{{turn}}z_{{forecastTime}}z.png
+
+Meteogramas, não exibe a região e sim um combobox para escolher a cidade. Repare no endereço que não tem a região e sim o código IBGE da cidade:
+
+https://s1.cptec.inpe.br/grafico/Modelos/SMEC/pn/meteograms/2024/10/08/00/SMEC_meteograms_1200104_2024100800z.png
+
+https://s1.cptec.inpe.br/grafico/Modelos/{{model}}/pn/{{product}}/{{year}}/{{month}}/{{day}}/{{turn}}/{{model}}_{{product}}_{{city}}_{{year}}{{month}}{{day}}{{turn}}z.png
 
 ## Observações
 

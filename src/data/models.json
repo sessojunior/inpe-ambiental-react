@@ -30,6 +30,10 @@
         {
           "label": "Material Particulado (dp<2.5um)",
           "value": "pm25"
+        },
+        {
+          "label": "Meteogramas",
+          "value": "meteograms"
         }
       ],
       "products": [
@@ -149,6 +153,13 @@
             "ams",
             "bra"
           ]
+        },
+        {
+          "label": null,
+          "value": "meteograms",
+          "group": "meteograms",
+          "regions": null,
+          "forecastTime": null
         }
       ]
     }
