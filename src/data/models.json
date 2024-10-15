@@ -32,6 +32,22 @@
           "value": "pm25"
         },
         {
+          "label": "MP Deposição úmida (dp<2.5um)",
+          "value": "pm25wd_40"
+        },
+        {
+          "label": "MP Integrado (dp<2.5um)",
+          "value": "pmint_40"
+        },
+        {
+          "label": "Ozônio (ppb)",
+          "value": "o3"
+        },
+        {
+          "label": "Óxidos de Nitrogênio",
+          "value": "nox"
+        },
+        {
           "label": "Meteogramas",
           "value": "meteograms"
         }
@@ -47,35 +63,26 @@
           ]
         },
         {
-          "label": "Nível de 7500m",
-          "value": "co_7500",
-          "group": "co",
+          "label": null,
+          "value": "pm25wd_40",
+          "group": "pm25wd_40",
           "regions": [
             "ams",
             "bra"
           ]
         },
         {
-          "label": "Nível de 5400m",
-          "value": "co_5400",
-          "group": "co",
+          "label": null,
+          "value": "pmint_40",
+          "group": "pmint_40",
           "regions": [
             "ams",
             "bra"
           ]
         },
         {
-          "label": "Nível de 3300m",
-          "value": "co_3300",
-          "group": "co",
-          "regions": [
-            "ams",
-            "bra"
-          ]
-        },
-        {
-          "label": "Nível de 1200m",
-          "value": "co_1200",
+          "label": "Nível de 40m",
+          "value": "co_40",
           "group": "co",
           "regions": [
             "ams",
@@ -92,8 +99,26 @@
           ]
         },
         {
-          "label": "Nível de 40m",
-          "value": "co_40",
+          "label": "Nível de 1200m",
+          "value": "co_1200",
+          "group": "co",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 3300m",
+          "value": "co_3300",
+          "group": "co",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 5400m",
+          "value": "co_5400",
           "group": "co",
           "regions": [
             "ams",
@@ -102,34 +127,25 @@
         },
         {
           "label": "Nível de 7500m",
-          "value": "pm25_7500",
-          "group": "pm25",
+          "value": "co_7500",
+          "group": "co",
           "regions": [
             "ams",
             "bra"
           ]
         },
         {
-          "label": "Nível de 5400m",
-          "value": "pm25_5400",
-          "group": "pm25",
+          "label": "Nível de 10200m",
+          "value": "co_10200",
+          "group": "co",
           "regions": [
             "ams",
             "bra"
           ]
         },
         {
-          "label": "Nível de 3300m",
-          "value": "pm25_3300",
-          "group": "pm25",
-          "regions": [
-            "ams",
-            "bra"
-          ]
-        },
-        {
-          "label": "Nível de 1200m",
-          "value": "pm25_1200",
+          "label": "Nível de 40m",
+          "value": "pm25_40",
           "group": "pm25",
           "regions": [
             "ams",
@@ -146,9 +162,171 @@
           ]
         },
         {
-          "label": "Nível de 40m",
-          "value": "pm25_40",
+          "label": "Nível de 1200m",
+          "value": "pm25_1200",
           "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 3300m",
+          "value": "pm25_3300",
+          "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 5400m",
+          "value": "pm25_5400",
+          "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 7500m",
+          "value": "pm25_7500",
+          "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 10200m",
+          "value": "pm25_10200",
+          "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 40m",
+          "value": "o3_40",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 700m",
+          "value": "o3_700",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 1200m",
+          "value": "o3_1200",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 3300m",
+          "value": "o3_3300",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 5400m",
+          "value": "o3_5400",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 7500m",
+          "value": "o3_7500",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 10200m",
+          "value": "o3_10200",
+          "group": "o3",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 40m",
+          "value": "nox_40",
+          "group": "nox",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 700m",
+          "value": "nox_700",
+          "group": "nox",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 1200m",
+          "value": "nox_1200",
+          "group": "nox",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 3300m",
+          "value": "nox_3300",
+          "group": "nox",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 5400m",
+          "value": "nox_5400",
+          "group": "nox",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 7500m",
+          "value": "pm25_7500",
+          "group": "pm25",
+          "regions": [
+            "ams",
+            "bra"
+          ]
+        },
+        {
+          "label": "Nível de 10200m",
+          "value": "nox_10200",
+          "group": "nox",
           "regions": [
             "ams",
             "bra"

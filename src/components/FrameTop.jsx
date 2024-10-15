@@ -135,7 +135,7 @@ export default function FrameTop({
     }
     const timeout = setTimeout(() => {
       setOpenDropdownConfig(false);
-    }, 600); // Atraso para fechar o dropdown
+    }, 250); // Atraso para fechar o dropdown
     setConfigTimeout(timeout);
   };
 
@@ -152,7 +152,7 @@ export default function FrameTop({
   const handleMouseLeaveTime = () => {
     const timeout = setTimeout(() => {
       setOpenDropdownTime(false);
-    }, 600); // Atraso para fechar o dropdown
+    }, 250); // Atraso para fechar o dropdown
     setTimeTimeout(timeout);
   };
 
