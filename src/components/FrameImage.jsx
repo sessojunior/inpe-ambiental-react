@@ -55,8 +55,8 @@ export default function FrameImage({
 
   const altImage = `${frame?.model} - ${frame?.region}`;
 
-  console.log("frame.forecastTime 1", frame.forecastTime);
-  console.log("urlImage", urlImage);
+  // console.log("frame.forecastTime 1", frame.forecastTime);
+  // console.log("urlImage", urlImage);
 
   // console.log("config.isAllPlaying", config.isAllPlaying)
   // console.log("config.framesWithImagesLoaded", config.framesWithImagesLoaded)
