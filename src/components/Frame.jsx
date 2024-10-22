@@ -80,7 +80,7 @@ export default function Frame({ id }) {
   // console.log("Frame loadingImages", loadingImages)
 
   return (
-    <div className={`flex flex-col p-4 hover:bg-gray-50 ${classFrame}`}>
+    <div className={`flex flex-col p-4 w-full hover:bg-gray-50 ${classFrame}`}>
       <FrameTop
         frame={frame}
         setFrame={setFrame}
