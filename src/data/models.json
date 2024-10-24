@@ -6,6 +6,7 @@
     "urlImage": "https://s1.cptec.inpe.br/grafico/Modelos/{{model}}/pn/{{product}}/{{year}}/{{month}}/{{day}}/{{turn}}/{{model}}_{{product}}_{{region}}_{{year}}{{month}}{{day}}{{turn}}z_{{forecastTime}}z.png",
     "urlDates": "https://s1.cptec.inpe.br/grafico/Modelos/portal_previsao_numerica/mod_brams15.json",
     "urlCharts": "https://ftp.cptec.inpe.br/modelos/produtos/BRAMS/ams_15km/grh/json2/{{year}}/{{month}}/{{day}}/{{turn}}/{{cityId}}.json",
+    "urlCsv": "https://ftp.cptec.inpe.br/modelos/produtos/BRAMS/ams_15km/grh/csv/{{year}}/{{month}}/{{day}}/{{turn}}/{{cityId}}.csv",
     "timeRun": 12,
     "periodHours": 3,
     "periodStart": "-024",
@@ -317,8 +318,8 @@
         },
         {
           "label": "Nível de 7500m",
-          "value": "pm25_7500",
-          "group": "pm25",
+          "value": "nox_7500",
+          "group": "nox",
           "regions": [
             "ams",
             "bra"

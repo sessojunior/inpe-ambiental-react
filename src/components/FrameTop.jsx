@@ -27,7 +27,7 @@ export default function FrameTop({
   setLoadingImages,
   downloadImageUrl,
 }) {
-  // console.log("FrameTop")
+  // console.log("FrameTop");
   // console.log("FrameTop dates", dates)
 
   const { config, setConfig, regions } = useContext(ConfigContext);
