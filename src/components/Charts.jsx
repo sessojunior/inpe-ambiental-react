@@ -107,10 +107,10 @@ export default function Charts({ date, urlCharts, urlCsv }) {
       )}
       {dataCsv !== null && (
         <>
-          {/* <Chart date={date} dataCsv={dataCsv} product="csvCo" />
+          <Chart date={date} dataCsv={dataCsv} product="csvCo" />
           <Chart date={date} dataCsv={dataCsv} product="csvPm25" />
           <Chart date={date} dataCsv={dataCsv} product="csvNox" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWind" /> */}
+          <Chart date={date} dataCsv={dataCsv} product="csvWind" />
           <Chart date={date} dataCsv={dataCsv} product="csvWindCo" />
           <Chart date={date} dataCsv={dataCsv} product="csvWindPm25" />
           <Chart date={date} dataCsv={dataCsv} product="csvWindNox" />
