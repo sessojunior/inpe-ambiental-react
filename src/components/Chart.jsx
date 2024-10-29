@@ -1684,9 +1684,9 @@ export default function Chart({
           [0.75, "rgba(255, 165, 0, 0.75)"], // Laranja translúcido para altos
           [0.9, "rgba(196, 70, 58, 0.75)"], // Vermelho translúcido para valores altos
         ],
-        min: 0,
-        max: 500,
-        tickInterval: 100, // Intervalo fixo para o eixo colorAxis
+        min: 25,
+        max: 300,
+        tickInterval: 50, // Intervalo fixo para o eixo colorAxis
         startOnTick: false,
         endOnTick: false,
         labels: {
@@ -1898,9 +1898,9 @@ export default function Chart({
           [0.75, "rgba(255, 165, 0, 0.75)"], // Laranja translúcido para altos
           [0.9, "rgba(196, 70, 58, 0.75)"], // Vermelho translúcido para valores altos
         ],
-        min: 0,
-        max: 10,
-        tickInterval: 2, // Intervalo fixo para o eixo colorAxis
+        min: 1,
+        max: 50,
+        tickInterval: 10, // Intervalo fixo para o eixo colorAxis
         startOnTick: false,
         endOnTick: false,
         labels: {
@@ -2113,8 +2113,8 @@ export default function Chart({
           [0.9, "rgba(196, 70, 58, 0.75)"], // Vermelho translúcido para valores altos
         ],
         min: 0,
-        max: 1,
-        tickInterval: 0.25, // Intervalo fixo para o eixo colorAxis
+        max: 10,
+        tickInterval: 2, // Intervalo fixo para o eixo colorAxis
         startOnTick: false,
         endOnTick: false,
         labels: {

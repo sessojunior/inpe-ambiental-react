@@ -13,7 +13,7 @@ export default function FrameCharts({ date, cityId, urlCharts, urlCsv }) {
           urlCharts
             .replace("{{year}}", date.year)
             .replace("{{month}}", date.month)
-            .replace("{{day}}", "24")
+            .replace("{{day}}", date.day)
             .replace("{{turn}}", date.turn)
             .replace("{{cityId}}", cityId)
         }
@@ -22,7 +22,7 @@ export default function FrameCharts({ date, cityId, urlCharts, urlCsv }) {
           urlCsv
             .replace("{{year}}", date.year)
             .replace("{{month}}", date.month)
-            .replace("{{day}}", "24")
+            .replace("{{day}}", date.day)
             .replace("{{turn}}", date.turn)
             .replace("{{cityId}}", cityId)
         }
