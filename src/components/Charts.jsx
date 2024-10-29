@@ -88,6 +88,17 @@ export default function Charts({ date, urlCharts, urlCsv }) {
 
   return (
     <div>
+      {dataCsv !== null && (
+        <>
+          {/* <Chart date={date} dataCsv={dataCsv} product="csvCo" />
+          <Chart date={date} dataCsv={dataCsv} product="csvPm25" />
+          <Chart date={date} dataCsv={dataCsv} product="csvNox" />
+          <Chart date={date} dataCsv={dataCsv} product="csvWind" />
+          <Chart date={date} dataCsv={dataCsv} product="csvWindCo" /> */}
+          <Chart date={date} dataCsv={dataCsv} product="csvWindPm25" />
+          <Chart date={date} dataCsv={dataCsv} product="csvWindNox" />
+        </>
+      )}
       {dataCharts !== null && (
         <>
           <Chart date={date} dataCharts={dataCharts} product="tempPressPrec" />
@@ -103,17 +114,6 @@ export default function Charts({ date, urlCharts, urlCsv }) {
           <Chart date={date} dataCharts={dataCharts} product="cloud" />
           <Chart date={date} dataCharts={dataCharts} product="co" />
           <Chart date={date} dataCharts={dataCharts} product="pm25" />
-        </>
-      )}
-      {dataCsv !== null && (
-        <>
-          <Chart date={date} dataCsv={dataCsv} product="csvCo" />
-          <Chart date={date} dataCsv={dataCsv} product="csvPm25" />
-          <Chart date={date} dataCsv={dataCsv} product="csvNox" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWind" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWindCo" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWindPm25" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWindNox" />
         </>
       )}
     </div>
