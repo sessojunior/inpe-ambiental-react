@@ -9,7 +9,8 @@ import { ConfigContext } from "../contexts/ConfigContext";
 export default function TopBar() {
   // console.log("TopBar")
 
-  const { config, setConfig, frames } = useContext(ConfigContext);
+  const { config, setConfig, frames, startAllTimer, pauseAllTimer } =
+    useContext(ConfigContext);
   const [showButtonAllPlaying, setShowButtonAllPlaying] = useState(true);
 
   const classButton =
@@ -29,38 +30,19 @@ export default function TopBar() {
 
   const handleFullScreen = () => {
     setConfig({ ...config, showHeaderFooter: !config.showHeaderFooter });
-    if (config.showHeaderFooter) {
-      toast.info(
-        "Ocultado o cabecalho e rodapé da página para ver melhor os quadros."
-      );
-    } else {
-      toast.info(
-        "Agora o cabecalho e rodapé da página estão visíveis novamente."
-      );
-    }
+    // if (config.showHeaderFooter) {
+    //   toast.info("Cabecalho e rodapé escondidos.");
+    // }
   };
 
   const handleQuantityFrames = ({ quantity }) => {
     // console.log("handleQuantityFrames", quantity);
     setConfig({ ...config, quantityFrames: quantity });
-    toast.info(
-      `Exibindo ${
-        quantity > 1 ? quantity + " quadros" : quantity + " quadro"
-      } de previsão numérica do tempo`
-    );
-  };
-
-  const startAllTimer = () => {
-    // console.log("startAllTimer")
-    toast.warn(
-      "Aguarde o carregamento de todas as imagens de animação dos quadros para iniciar a animação!"
-    );
-    setConfig({ ...config, isAllPlaying: true, framesWithImagesLoaded: [] });
-  };
-
-  const pauseAllTimer = () => {
-    // console.log("pauseAllTimer")
-    setConfig({ ...config, isAllPlaying: false, framesWithImagesLoaded: [] });
+    // toast.info(
+    //   `Exibindo ${
+    //     quantity > 1 ? quantity + " quadros" : quantity + " quadro"
+    //   } de previsão numérica do tempo`
+    // );
   };
 
   useEffect(() => {
@@ -85,7 +67,7 @@ export default function TopBar() {
         </button>
       </div>
       <div className="w-full flex lg:flex-grow text-center justify-center">
-        <h2 className="text-md md:text-xl font-medium">Previsão Ambiental</h2>
+        <h2 className="text-md md:text-xl font-medium">Previsão Numérica</h2>
       </div>
       <div className="flex gap-1">
         {showButtonAllPlaying && (

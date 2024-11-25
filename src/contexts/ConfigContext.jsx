@@ -39,7 +39,7 @@ export default function ConfigProvider({ children }) {
   }
 
   const [frames, setFrames] = useState(
-    JSON.parse(localStorage.getItem("framesAmbiental")) || initialFrames
+    JSON.parse(localStorage.getItem("framesPrevisao")) || initialFrames
   );
 
   // console.log("jsonFrames", jsonFrames)
@@ -69,15 +69,35 @@ export default function ConfigProvider({ children }) {
     }));
     // console.log("frames", frames)
     // console.log("localFrames", localFrames)
-    localStorage.setItem("framesAmbiental", JSON.stringify(localFrames));
+    localStorage.setItem("framesPrevisao", JSON.stringify(localFrames));
     // console.log("salvou no localStorage: frames")
   }, [frames]);
 
   // console.log("frames", frames)
 
+  const startAllTimer = () => {
+    // console.log("startAllTimer")
+    setConfig({ ...config, isAllPlaying: true, framesWithImagesLoaded: [] });
+  };
+
+  const pauseAllTimer = () => {
+    // console.log("pauseAllTimer")
+    setConfig({ ...config, isAllPlaying: false, framesWithImagesLoaded: [] });
+  };
+
   return (
     <ConfigContext.Provider
-      value={{ config, setConfig, models, regions, cities, frames, setFrames }}
+      value={{
+        config,
+        setConfig,
+        models,
+        regions,
+        cities,
+        frames,
+        setFrames,
+        startAllTimer,
+        pauseAllTimer,
+      }}
     >
       {children}
     </ConfigContext.Provider>
