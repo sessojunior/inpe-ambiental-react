@@ -67,7 +67,7 @@ export default function TopBar() {
         </button>
       </div>
       <div className="w-full flex lg:flex-grow text-center justify-center">
-        <h2 className="text-md md:text-xl font-medium">Previsão Numérica</h2>
+        <h2 className="text-md md:text-xl font-medium">Previsão Ambiental</h2>
       </div>
       <div className="flex gap-1">
         {showButtonAllPlaying && (
