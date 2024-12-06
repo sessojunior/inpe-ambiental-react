@@ -18,6 +18,7 @@ highchartsExportData(Highcharts);
 highchartsBoost(Highcharts);
 
 export default function Chart({
+  city,
   date,
   dataCharts = null,
   dataCsv = null,
@@ -164,6 +165,7 @@ export default function Chart({
       enabled: false,
     },
     credits: {
+      enabled: false,
       text: "Previsão numérica do CPTEC",
       href: "https://previsaonumerica.cptec.inpe.br",
       position: {
@@ -721,7 +723,7 @@ export default function Chart({
         backgroundColor: "transparent",
       },
       title: {
-        text: "Umidade Relativa a 2m do solo (%)",
+        text: "Umidade Relativa a 2m (%)",
         align: "center",
       },
       subtitle: {
@@ -894,7 +896,7 @@ export default function Chart({
         backgroundColor: "transparent",
       },
       title: {
-        text: "Monóxido de Carbono (ppb)",
+        text: "Monóxido de Carbono (ppbv)",
         align: "center",
       },
       subtitle: {
@@ -920,42 +922,42 @@ export default function Chart({
       series: [
         {
           data: co_40,
-          name: "40 metros do solo",
+          name: "40 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ppb",
+            valueSuffix: " ppbv",
           },
         },
         {
           data: co_700,
-          name: "700 metros do solo",
+          name: "700 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ppb",
+            valueSuffix: " ppbv",
           },
         },
         {
           data: co_1400,
-          name: "1400 metros do solo",
+          name: "1400 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ppb",
+            valueSuffix: " ppbv",
           },
         },
         {
           data: co_5400,
-          name: "5400 metros do solo",
+          name: "5400 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ppb",
+            valueSuffix: " ppbv",
           },
         },
         {
           data: co_10200,
-          name: "10200 metros do solo",
+          name: "10200 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ppb",
+            valueSuffix: " ppbv",
           },
         },
       ],
@@ -1011,7 +1013,7 @@ export default function Chart({
         backgroundColor: "transparent",
       },
       title: {
-        text: "Material Micro-particulado 2.5nm (ug/m³)",
+        text: "Material Micro-particulado 2.5nm (µg/m³)",
         align: "center",
       },
       subtitle: {
@@ -1037,42 +1039,42 @@ export default function Chart({
       series: [
         {
           data: pm25_40,
-          name: "40 metros do solo",
+          name: "40 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ug/m³",
+            valueSuffix: " µg/m³",
           },
         },
         {
           data: pm25_700,
-          name: "700 metros do solo",
+          name: "700 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ug/m³",
+            valueSuffix: " µg/m³",
           },
         },
         {
           data: pm25_1400,
-          name: "1400 metros do solo",
+          name: "1400 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ug/m³",
+            valueSuffix: " µg/m³",
           },
         },
         {
           data: pm25_5400,
-          name: "5400 metros do solo",
+          name: "5400 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ug/m³",
+            valueSuffix: " µg/m³",
           },
         },
         {
           data: pm25_10200,
-          name: "10200 metros do solo",
+          name: "10200 metros",
           showInLegend: true,
           tooltip: {
-            valueSuffix: " ug/m³",
+            valueSuffix: " µg/m³",
           },
         },
       ],
@@ -1302,7 +1304,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ug/m³",
+          format: "{value} µg/m³",
         },
       },
       legend: {
@@ -1319,7 +1321,7 @@ export default function Chart({
           tooltip: {
             headerFormat: "Concentração de PM25<br/>",
             pointFormat:
-              "{point.x:%d/%m %H:%M}, elevação: {point.y} m: <b>{point.value} ug/m³</b>",
+              "{point.x:%d/%m %H:%M}, elevação: {point.y} m: <b>{point.value} µg/m³</b>",
           },
         },
       ],
@@ -1423,7 +1425,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ppb",
+          format: "{value} ppbv",
         },
       },
       legend: {
@@ -1446,7 +1448,7 @@ export default function Chart({
                 this.x
               )}, elevação: nível ${level}: ${customLabels[level]}: <b>${
                 this.value
-              } ppb</b>`;
+              } ppbv</b>`;
             },
           },
         },
@@ -1635,12 +1637,12 @@ export default function Chart({
         },
       },
       title: {
-        text: "Vento e Monóxido de Carbono (CO)",
+        text: "Vento e Monóxido de Carbono (ppbv)",
         align: "center",
         x: 40,
       },
       subtitle: {
-        text: "Variação ao longo da elevação e do tempo com vento e monóxido de carbono",
+        text: "Fonte: CPTEC",
         align: "center",
         x: 40,
       },
@@ -1690,7 +1692,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ppm",
+          format: "{value} ppbv",
         },
       },
       legend: {
@@ -1733,7 +1735,7 @@ export default function Chart({
                 `Elevação: nível ${elevationLevel}: <b>${customLabels[elevationLevel]}</b><br/>` +
                 `Velocidade: <b>${speed} m/s</b><br/>` +
                 `Direção: <b>${direction}°</b><br/>` +
-                `Concentração de CO: <b>${co} ppm</b>`
+                `Concentração de CO: <b>${co} ppbv</b>`
               );
             },
           },
@@ -1849,12 +1851,12 @@ export default function Chart({
         },
       },
       title: {
-        text: "Vento e Material Micro-particulado 2.5nm (ug/m³)",
+        text: "Vento e Material Micro-particulado 2.5nm (µg/m³)",
         align: "center",
         x: 40,
       },
       subtitle: {
-        text: "Variação ao longo da elevação e do tempo com vento e material micro-particulado 2.5nm",
+        text: "Fonte: CPTEC",
         align: "center",
         x: 40,
       },
@@ -1904,7 +1906,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ug/m³",
+          format: "{value} µg/m³",
         },
       },
       legend: {
@@ -1914,7 +1916,7 @@ export default function Chart({
       series: [
         {
           data: dataPm25, // Função que processa o CSV e gera os dados
-          name: "Material Micro-particulado 2.5nm (ug/m³)",
+          name: "Material Micro-particulado 2.5nm (µg/m³)",
           type: "heatmap",
           borderWidth: 0,
           colsize: 3 * 36e5, // Intervalo de 3 horas (ajuste conforme necessidade)
@@ -1947,7 +1949,7 @@ export default function Chart({
                 `Elevação: nível ${elevationLevel}: <b>${customLabels[elevationLevel]}</b><br/>` +
                 `Velocidade: <b>${speed} m/s</b><br/>` +
                 `Direção: <b>${direction}°</b><br/>` +
-                `Material Micro-particulado 2.5nm: <b>${pm25} ug/m³</b>`
+                `Material Micro-particulado 2.5nm: <b>${pm25} µg/m³</b>`
               );
             },
           },
@@ -2063,12 +2065,12 @@ export default function Chart({
         },
       },
       title: {
-        text: "Vento e Óxido de Nitrogenio (NOx)",
+        text: "Vento e Óxido de Nitrogenio (ppbv)",
         align: "center",
         x: 40,
       },
       subtitle: {
-        text: "Variação ao longo da elevação e do tempo com vento e óxido de nitrogênio",
+        text: "Fonte: CPTEC",
         align: "center",
         x: 40,
       },
@@ -2118,7 +2120,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ppb",
+          format: "{value} ppbv",
         },
       },
       legend: {
@@ -2161,7 +2163,7 @@ export default function Chart({
                 `Elevação: nível ${elevationLevel}: <b>${customLabels[elevationLevel]}</b><br/>` +
                 `Velocidade: <b>${speed} m/s</b><br/>` +
                 `Direção: <b>${direction}°</b><br/>` +
-                `Óxido de nitrogénio (NOx): <b>${nox} ug/m³</b>`
+                `Óxido de nitrogénio (NOx): <b>${nox} ppbv</b>`
               );
             },
           },
@@ -2215,9 +2217,7 @@ export default function Chart({
 
   return (
     <div>
-      {dataCharts !== null && (
-        <p className="pt-4 text-center">{dataCharts.area}</p>
-      )}
+      {city !== null && <p className="pt-4 text-center">{city}</p>}
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

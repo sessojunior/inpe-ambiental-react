@@ -7,6 +7,7 @@ export default function Charts({ date, urlCharts, urlCsv }) {
   const [dataCsv, setDataCsv] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [city, setCity] = useState(null);
 
   // console.log("date", date);
   // console.log("urlCharts", urlCharts);
@@ -23,6 +24,7 @@ export default function Charts({ date, urlCharts, urlCsv }) {
           throw new Error("Dados não encontrados no JSON");
         }
         setDataCharts(data.datasets[0]);
+        setCity(data.datasets[0].area);
       } catch (error) {
         console.log("Erro ao obter dados do JSON: " + urlCharts);
         // console.log(error);
@@ -90,30 +92,76 @@ export default function Charts({ date, urlCharts, urlCsv }) {
     <div>
       {dataCharts !== null && (
         <>
-          <Chart date={date} dataCharts={dataCharts} product="tempPressPrec" />
           <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="tempPressPrec"
+          />
+          <Chart
+            city={city}
             date={date}
             dataCharts={dataCharts}
             product="tempMinMaxMedia"
           />
-          <Chart date={date} dataCharts={dataCharts} product="press" />
-          <Chart date={date} dataCharts={dataCharts} product="prec" />
-          <Chart date={date} dataCharts={dataCharts} product="wind" />
-          <Chart date={date} dataCharts={dataCharts} product="ur" />
-          <Chart date={date} dataCharts={dataCharts} product="cloud" />
-          <Chart date={date} dataCharts={dataCharts} product="co" />
-          <Chart date={date} dataCharts={dataCharts} product="pm25" />
+          <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="press"
+          />
+          <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="prec"
+          />
+          <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="wind"
+          />
+          <Chart city={city} date={date} dataCharts={dataCharts} product="ur" />
+          <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="cloud"
+          />
+          <Chart city={city} date={date} dataCharts={dataCharts} product="co" />
+          <Chart
+            city={city}
+            date={date}
+            dataCharts={dataCharts}
+            product="pm25"
+          />
         </>
       )}{" "}
       {dataCsv !== null && (
         <>
           {/* <Chart date={date} dataCsv={dataCsv} product="csvCo" />
-          <Chart date={date} dataCsv={dataCsv} product="csvPm25" />
-          <Chart date={date} dataCsv={dataCsv} product="csvNox" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWind" /> */}
-          <Chart date={date} dataCsv={dataCsv} product="csvWindCo" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWindPm25" />
-          <Chart date={date} dataCsv={dataCsv} product="csvWindNox" />
+          <Chart city={city} date={date} dataCsv={dataCsv} product="csvPm25" />
+          <Chart city={city} date={date} dataCsv={dataCsv} product="csvNox" />
+          <Chart city={city} date={date} dataCsv={dataCsv} product="csvWind" /> */}
+          <Chart
+            city={city}
+            date={date}
+            dataCsv={dataCsv}
+            product="csvWindCo"
+          />
+          <Chart
+            city={city}
+            date={date}
+            dataCsv={dataCsv}
+            product="csvWindPm25"
+          />
+          <Chart
+            city={city}
+            date={date}
+            dataCsv={dataCsv}
+            product="csvWindNox"
+          />
         </>
       )}
     </div>
