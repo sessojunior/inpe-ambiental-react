@@ -1623,22 +1623,21 @@ export default function Chart({
       32: "10289.8 m",
     };
     const stops = [
-      [0.1, "#FFFFFF"],
-      [0.5, "#B9EBDF"],
-      [0.9, "#D2F0DD"],
-      [2.5, "#FDF4D3"],
-      [4.5, "#F3EB99"],
-      [9, "#F5D263"],
-      [13, "#FCB419"],
-      [17, "#FD7647"],
-      [21, "#FD4D2E"],
-      [25, "#FF2C1A"],
-      [29, "#FD0301"],
-      [37.5, "#D90C44"],
-      [47.5, "#D20D5F"],
-      [57.5, "#D00B76"],
-      [100, "#9725C2"],
-      [140, "#750476"],
+      [0, "#FFFFFF"],
+      [50, "#B9EBDF"],
+      [100, "#D2F0DD"],
+      [150, "#FDF4D3"],
+      [200, "#F3EB99"],
+      [300, "#F5D263"],
+      [400, "#FCB419"],
+      [500, "#FD7647"],
+      [750, "#FD4D2E"],
+      [1000, "#FF2C1A"],
+      [1500, "#FD0301"],
+      [2000, "#D90C44"],
+      [2500, "#D00B76"],
+      [3000, "#9725C2"],
+      [4250, "#750476"],
     ];
     const generateLegend = (idChart) => {
       // Gerar a legenda personalizada com o gradiente
@@ -1717,7 +1716,7 @@ export default function Chart({
       },
       yAxis: {
         title: {
-          text: "Elevação em 32 níveis (m)", // O eixo y representa a elevação
+          text: "Altitude (m)", // O eixo y representa a elevação
         },
         labels: {
           formatter: function () {
@@ -1880,22 +1879,18 @@ export default function Chart({
       32: "10289.8 m",
     };
     const stops = [
-      [0.1, "#FFFFFF"],
-      [0.5, "#B9EBDF"],
-      [0.9, "#D2F0DD"],
-      [2.5, "#FDF4D3"],
-      [4.5, "#F3EB99"],
-      [9, "#F5D263"],
-      [13, "#FCB419"],
-      [17, "#FD7647"],
-      [21, "#FD4D2E"],
-      [25, "#FF2C1A"],
-      [29, "#FD0301"],
-      [37.5, "#D90C44"],
-      [47.5, "#D20D5F"],
-      [57.5, "#D00B76"],
-      [100, "#9725C2"],
-      [140, "#750476"],
+      [0, "#FFFFFF"],
+      [12.5, "#B9EBDF"],
+      [30, "#FDF4D3"],
+      [55, "#F3EB99"],
+      [80, "#FBB825"],
+      [110, "#FF6E42"],
+      [160, "#FF3E23"],
+      [210, "#FD0901"],
+      [275, "#D50B53"],
+      [400, "#D00B76"],
+      [450, "#9725C2"],
+      [500, "#750476"],
     ];
     const generateLegend = (idChart) => {
       // Gerar a legenda personalizada com o gradiente
@@ -1974,7 +1969,7 @@ export default function Chart({
       },
       yAxis: {
         title: {
-          text: "Elevação em 32 níveis (m)", // O eixo y representa a elevação
+          text: "Altitude (m)", // O eixo y representa a elevação
         },
         labels: {
           formatter: function () {
@@ -2231,7 +2226,7 @@ export default function Chart({
       },
       yAxis: {
         title: {
-          text: "Elevação em 32 níveis (m)", // O eixo y representa a elevação
+          text: "Altitude (m)", // O eixo y representa a elevação
         },
         labels: {
           formatter: function () {
