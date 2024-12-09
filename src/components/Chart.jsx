@@ -1638,12 +1638,12 @@ export default function Chart({
       },
       title: {
         text: "Vento e Monóxido de Carbono (ppbv)",
-        align: "center",
+        align: "left",
         x: 40,
       },
       subtitle: {
         text: "Fonte: CPTEC",
-        align: "center",
+        align: "left",
         x: 40,
       },
       xAxis: {
@@ -1692,7 +1692,7 @@ export default function Chart({
         startOnTick: false,
         endOnTick: false,
         labels: {
-          format: "{value} ppbv",
+          format: "{value}",
         },
       },
       legend: {
@@ -1852,12 +1852,12 @@ export default function Chart({
       },
       title: {
         text: "Vento e Material Micro-particulado 2.5nm (µg/m³)",
-        align: "center",
+        align: "left",
         x: 40,
       },
       subtitle: {
         text: "Fonte: CPTEC",
-        align: "center",
+        align: "left",
         x: 40,
       },
       xAxis: {
@@ -1902,11 +1902,11 @@ export default function Chart({
         ],
         min: 1,
         max: 50,
-        tickInterval: 10, // Intervalo fixo para o eixo colorAxis
-        startOnTick: false,
-        endOnTick: false,
+        tickInterval: 5, // Intervalo fixo para o eixo colorAxis
+        startOnTick: true,
+        endOnTick: true,
         labels: {
-          format: "{value} µg/m³",
+          format: "{value}",
         },
       },
       legend: {
@@ -2050,10 +2050,66 @@ export default function Chart({
       31: "9458.6 m",
       32: "10289.8 m",
     };
-    const optionsHeatmapVectorWindPm25 = {
+    const stops = [
+      [0.1, "#FFFFFF"],
+      [0.5, "#B9EBDF"],
+      [0.9, "#D2F0DD"],
+      [2.5, "#FDF4D3"],
+      [4.5, "#F3EB99"],
+      [9, "#F5D263"],
+      [13, "#FCB419"],
+      [17, "#FD7647"],
+      [21, "#FD4D2E"],
+      [25, "#FF2C1A"],
+      [29, "#FD0301"],
+      [37.5, "#D90C44"],
+      [47.5, "#D20D5F"],
+      [57.5, "#D00B76"],
+      [100, "#9725C2"],
+      [140, "#750476"],
+    ];
+    const generateLegend = (idChart) => {
+      // Gerar a legenda personalizada com o gradiente
+      const gradientStops = stops
+        .map(([value, color], index) => {
+          const stopPercentage = (index / (stops.length - 1)) * 100; // Distribuir uniformemente no gradiente
+          return `${color} ${stopPercentage}%`;
+        })
+        .join(", ");
+      // A legenda HTML
+      const legendHTML = `
+        <div class="w-full flex flex-col items-center overflow-x-auto mt-1 mb-3">
+          <div class="w-10/12 h-3 rounded" style="background: linear-gradient(to right, ${gradientStops});"></div>
+          <div class="flex justify-between w-10/12 mt-1">
+            ${stops
+              .map(([value]) => {
+                return `
+                  <span class="flex-1 text-center text-sm">${value}</span>
+                `;
+              })
+              .join("")}
+          </div>
+        </div>
+      `;
+      // Inserir a legenda no DOM
+      document
+        .getElementById(idChart)
+        .insertAdjacentHTML("afterend", legendHTML);
+    };
+    const optionsHeatmapVectorWindNox = {
       chart: {
         backgroundColor: "transparent",
         height: "100%",
+        events: {
+          load: function () {
+            // Aqui, 'this' refere-se à instância do gráfico
+            const chart = this;
+            console.log("chart", chart);
+            console.log("chart container id", chart.container.id);
+            // Chamar a função global para gerar a legenda personalizada
+            generateLegend(chart.container.id);
+          },
+        },
       },
       boost: {
         useGPUTranslations: true, // Utiliza GPU para renderização
@@ -2066,12 +2122,12 @@ export default function Chart({
       },
       title: {
         text: "Vento e Óxido de Nitrogenio (ppbv)",
-        align: "center",
+        align: "left",
         x: 40,
       },
       subtitle: {
         text: "Fonte: CPTEC",
-        align: "center",
+        align: "left",
         x: 40,
       },
       xAxis: {
@@ -2107,25 +2163,12 @@ export default function Chart({
         reversed: false,
       },
       colorAxis: {
-        stops: [
-          [0, "rgba(48, 96, 207, 0.75)"], // Azul translúcido para valores baixos
-          [0.25, "rgba(173, 216, 230, 0.75)"], // Azul claro para intermediários
-          [0.5, "rgba(255, 251, 188, 0.75)"], // Amarelo translúcido para médios
-          [0.75, "rgba(255, 165, 0, 0.75)"], // Laranja translúcido para altos
-          [0.9, "rgba(196, 70, 58, 0.75)"], // Vermelho translúcido para valores altos
-        ],
         min: 0,
-        max: 10,
-        tickInterval: 2, // Intervalo fixo para o eixo colorAxis
-        startOnTick: false,
-        endOnTick: false,
-        labels: {
-          format: "{value} ppbv",
-        },
+        max: 1,
+        stops: stops,
       },
       legend: {
-        align: "center",
-        symbolWidth: 420,
+        enabled: false,
       },
       series: [
         {
@@ -2212,7 +2255,7 @@ export default function Chart({
         },
       ],
     };
-    options = optionsHeatmapVectorWindPm25;
+    options = optionsHeatmapVectorWindNox;
   }
 
   return (
