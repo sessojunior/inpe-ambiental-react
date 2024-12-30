@@ -30,15 +30,15 @@
           "value": "co"
         },
         {
-          "label": "Material Particulado (dp<2.5µm)",
+          "label": "PM2.5 Material Particulado (µg/m³)",
           "value": "pm25"
         },
         {
-          "label": "MP Deposição úmida (dp<2.5µm)",
+          "label": "PM2.5 Deposição úmida (mg/m²)",
           "value": "pm25wd_40"
         },
         {
-          "label": "MP Integrado (dp<2.5µm)",
+          "label": "PM Integrado (mg/m²)",
           "value": "pmint_40"
         },
         {
@@ -46,7 +46,7 @@
           "value": "o3"
         },
         {
-          "label": "Óxidos de Nitrogênio",
+          "label": "Óxidos de Nitrogênio (ppbv)",
           "value": "nox"
         },
         {
