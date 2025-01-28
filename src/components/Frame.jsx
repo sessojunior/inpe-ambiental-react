@@ -38,7 +38,7 @@ export default function Frame({ id }) {
     setTimeout(() => {
       updateLocalFrames(localFrames);
       window.location.reload();
-    }, 5000);
+    }, 3000);
 
     return (
       <div className="p-8 text-red-500">
